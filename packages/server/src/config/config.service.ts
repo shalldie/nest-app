@@ -17,12 +17,10 @@ export class ConfigService extends EnvConfig {
             NODE_ENV: Joi.string()
                 .valid('development', 'production')
                 .default(defEnv.NODE_ENV),
-            PORT: Joi.number().default(defEnv.PORT),
+            PORT: Joi.number().default(defEnv.PORT)
         });
 
-        const { error, value: validatedEnvConfig } = envVarsSchema.validate(
-            envConfig,
-        );
+        const { error, value: validatedEnvConfig } = envVarsSchema.validate(envConfig);
 
         if (error) {
             throw new Error(`Config validation error: ${error.message}`);

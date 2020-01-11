@@ -14,7 +14,7 @@ async function bootstrap(): Promise<void> {
     const envNjk = nunjucks.configure(path.join(__dirname, './views'), {
         autoescape: true,
         express: app,
-        watch: true,
+        watch: true
     });
 
     app.engine('html', envNjk.render);
@@ -23,7 +23,7 @@ async function bootstrap(): Promise<void> {
     await app.listen(config.PORT, () => {
         consola.start({
             badge: true,
-            message: `serve on http://127.0.0.1:${config.PORT}`,
+            message: `serve on http://127.0.0.1:${config.PORT}`
         });
     });
 }

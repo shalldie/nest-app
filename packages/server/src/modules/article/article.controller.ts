@@ -5,7 +5,7 @@ export class ArticleController {
     @Get()
     index() {
         return {
-            message: 'this is /article',
+            message: 'this is /article'
         };
     }
 }

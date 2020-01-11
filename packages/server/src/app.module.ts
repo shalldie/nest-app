@@ -5,6 +5,6 @@ import { RouteModules } from './modules';
 @Module({
     imports: [ConfigModule, ...RouteModules],
     controllers: [],
-    providers: [],
+    providers: []
 })
 export class AppModule {}
