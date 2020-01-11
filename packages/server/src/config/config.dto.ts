@@ -5,9 +5,7 @@
  * @class EnvConfig
  */
 export class EnvConfig {
-
     public NODE_ENV: 'development' | 'production' = 'development';
 
     public PORT: number = 3000;
-
 }

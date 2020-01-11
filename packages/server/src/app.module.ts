@@ -3,11 +3,8 @@ import { ConfigModule } from './config/config.module';
 import { RouteModules } from './modules';
 
 @Module({
-    imports: [
-        ConfigModule,
-        ...RouteModules
-    ],
+    imports: [ConfigModule, ...RouteModules],
     controllers: [],
     providers: [],
 })
-export class AppModule { }
+export class AppModule {}

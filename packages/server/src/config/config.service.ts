@@ -6,7 +6,6 @@ import Joi from '@hapi/joi';
 
 @Injectable()
 export class ConfigService extends EnvConfig {
-
     constructor(filePath: string) {
         super();
         this.initialize(dotenv.parse(fs.readFileSync(filePath)));
@@ -18,7 +17,7 @@ export class ConfigService extends EnvConfig {
             NODE_ENV: Joi.string()
                 .valid('development', 'production')
                 .default(defEnv.NODE_ENV),
-            PORT: Joi.number().default(defEnv.PORT)
+            PORT: Joi.number().default(defEnv.PORT),
         });
 
         const { error, value: validatedEnvConfig } = envVarsSchema.validate(
