@@ -9,7 +9,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "rimraf dist && nest start --watch",
     "dev": "npm run start:dev",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -20,6 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@blog/nuxt-client": "file:../client",
     "@hapi/joi": "^16.1.8",
     "@nestjs/common": "^6.7.2",
     "@nestjs/core": "^6.7.2",
@@ -47,6 +48,6 @@
     "ts-loader": "^6.1.1",
     "ts-node": "^8.4.1",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.7.4"
   }
 }

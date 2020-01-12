@@ -1,4 +1,10 @@
-export default {
+/**
+ * client导出
+ */
+
+const Nuxt = require('nuxt');
+
+const nuxtConfig = {
     mode: 'universal',
     /*
      ** Headers of the page
@@ -51,4 +57,9 @@ export default {
          */
         extend(config, ctx) {}
     }
+};
+
+module.exports = {
+    Nuxt,
+    nuxtConfig
 };
