@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { Nuxt, nuxtConfig } from '@blog/nuxt-client/nuxt.config';
+import { Nuxt, nuxtConfig } from '@blog/nuxt-client';
 
 console.log(Nuxt);
 
@@ -10,8 +10,7 @@ export class ArticleController {
     index() {
         // const nuxtConfig = require('../../../../client/nuxt.config.js');
         return {
-            message: 'this is /article',
-            nuxtConfig
+            message: 'this is article'
         };
     }
 }

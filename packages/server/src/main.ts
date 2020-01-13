@@ -6,11 +6,15 @@ import { ConfigService } from './config/config.service';
 import { AppModule } from './app.module';
 import nunjucks from 'nunjucks';
 import consola from 'consola';
+import { NuxtFilter } from './common/nuxt/nuxt.filter';
 
 async function bootstrap(): Promise<void> {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
+    app.setGlobalPrefix('/api');
+
     const config = app.get(ConfigService);
 
+    // --- njk ---
     const envNjk = nunjucks.configure(path.join(__dirname, './views'), {
         autoescape: true,
         express: app,
@@ -20,6 +24,10 @@ async function bootstrap(): Promise<void> {
     app.engine('html', envNjk.render);
     app.setViewEngine('html');
 
+    // --- nuxt ---
+    app.useGlobalFilters(await NuxtFilter.create(config));
+
+    // --- listen ---
     await app.listen(config.PORT, () => {
         consola.start({
             badge: true,

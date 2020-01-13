@@ -4,6 +4,7 @@
   "description": "Nuxt client of my blog.",
   "author": "shalldie",
   "private": true,
+  "main": "index.js",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

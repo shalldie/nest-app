@@ -1,10 +1,10 @@
-/**
- * client导出
- */
+/* eslint-disable */
 
-const Nuxt = require('nuxt');
+const path = require('path');
 
-const nuxtConfig = {
+module.exports = {
+    rootDir: __dirname,
+
     mode: 'universal',
     /*
      ** Headers of the page
@@ -41,7 +41,13 @@ const nuxtConfig = {
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
         // Doc: https://github.com/nuxt-community/dotenv-module
-        '@nuxtjs/dotenv'
+        [
+            '@nuxtjs/dotenv',
+            {
+                path: path.join(__dirname, '../../env/'),
+                filename: `${process.env.NODE_ENV || 'development'}.env`
+            }
+        ]
     ],
     /*
      ** Axios module configuration
@@ -57,9 +63,4 @@ const nuxtConfig = {
          */
         extend(config, ctx) {}
     }
-};
-
-module.exports = {
-    Nuxt,
-    nuxtConfig
 };
