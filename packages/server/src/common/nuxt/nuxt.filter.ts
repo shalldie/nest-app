@@ -11,13 +11,11 @@ export class NuxtFilter implements ExceptionFilter {
         nuxtConfig.dev = config.NODE_ENV === 'development';
         const nuxt = new Nuxt(nuxtConfig);
 
+        // Make sure to wait for Nuxt to load @nuxt/typescript-build before proceeding
+        await nuxt.ready();
         // 开发模式，动态编译
         if (nuxtConfig.dev) {
             await new Builder(nuxt).build();
-        }
-        // 生产直接用 .nuxt 中内容
-        else {
-            await nuxt.ready();
         }
 
         return new NuxtFilter(config, nuxt);

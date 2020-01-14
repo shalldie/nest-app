@@ -5,14 +5,16 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "dev": "lerna run dev --scope=@blog/server --stream",
-    "format": "prettier --write \"packages/**/*.@(ts|js)\"",
-    "lint": "eslint . --ext .ts"
+    "format": "prettier --write \"packages/**/*.@(ts|js|vue)\"",
+    "lint": "eslint . --ext .ts,.js,.vue"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
     "eslint": "^6.8.0",
     "lerna": "^3.20.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.4"
   }
 }

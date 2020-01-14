@@ -1,4 +1,4 @@
-import { Controller, Get, Render, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 import { ConfigService } from 'src/config/config.service';
 
 @Controller()

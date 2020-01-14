@@ -1,6 +1,14 @@
 /* eslint-disable */
 
 const path = require('path');
+const dotenv = require('dotenv');
+
+const envDir = path.join(__dirname, '../../env/');
+const envFile = `${process.env.NODE_ENV || 'development'}.env`;
+
+dotenv.config({
+    path: path.join(envDir, envFile)
+});
 
 module.exports = {
     rootDir: __dirname,
@@ -44,8 +52,8 @@ module.exports = {
         [
             '@nuxtjs/dotenv',
             {
-                path: path.join(__dirname, '../../env/'),
-                filename: `${process.env.NODE_ENV || 'development'}.env`
+                path: envDir,
+                filename: envFile
             }
         ]
     ],

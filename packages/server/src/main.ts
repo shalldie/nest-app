@@ -31,7 +31,7 @@ async function bootstrap(): Promise<void> {
     await app.listen(config.PORT, () => {
         consola.start({
             badge: true,
-            message: `serve on http://127.0.0.1:${config.PORT}`
+            message: `Serve on http://127.0.0.1:${config.PORT}`
         });
     });
 }
