@@ -3,6 +3,7 @@
         "target": "es2018",
         "module": "esnext",
         "moduleResolution": "node",
+        "experimentalDecorators": true,
         "lib": [
             "esnext",
             "esnext.asynciterable",

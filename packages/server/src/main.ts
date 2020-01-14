@@ -8,6 +8,9 @@ import nunjucks from 'nunjucks';
 import consola from 'consola';
 import { NuxtFilter } from './common/nuxt/nuxt.filter';
 
+// eslint-disable-next-line
+console.log(require('fork-ts-checker-webpack-plugin'));
+
 async function bootstrap(): Promise<void> {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
     app.setGlobalPrefix('/api');
