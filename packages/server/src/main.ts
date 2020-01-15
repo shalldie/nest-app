@@ -6,7 +6,7 @@ import { ConfigService } from './config/config.service';
 import { AppModule } from './app.module';
 import nunjucks from 'nunjucks';
 import consola from 'consola';
-import { NuxtFilter } from './common/nuxt/nuxt.filter';
+// import { NuxtFilter } from './common/nuxt/nuxt.filter';
 
 async function bootstrap(): Promise<void> {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -25,7 +25,7 @@ async function bootstrap(): Promise<void> {
     app.setViewEngine('html');
 
     // --- nuxt ---
-    app.useGlobalFilters(await NuxtFilter.create(config));
+    // app.useGlobalFilters(await NuxtFilter.create(config));
 
     // --- listen ---
     await app.listen(config.PORT, () => {

@@ -20,4 +20,12 @@ export class EnvConfig {
      * @memberof EnvConfig
      */
     public PORT: number = 3000;
+
+    /**
+     * markdown 文章所在目录
+     *
+     * @type {string}
+     * @memberof EnvConfig
+     */
+    public MD_DIR: string = process.cwd();
 }

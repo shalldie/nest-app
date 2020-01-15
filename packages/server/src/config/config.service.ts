@@ -17,7 +17,8 @@ export class ConfigService extends EnvConfig {
             NODE_ENV: Joi.string()
                 .valid('development', 'production')
                 .default(defEnv.NODE_ENV),
-            PORT: Joi.number().default(defEnv.PORT)
+            PORT: Joi.number().default(defEnv.PORT),
+            MD_DIR: Joi.string().default(defEnv.MD_DIR)
         });
 
         const { error, value: validatedEnvConfig } = envVarsSchema.validate(envConfig);

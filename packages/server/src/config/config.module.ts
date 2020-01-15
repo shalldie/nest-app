@@ -7,7 +7,9 @@ import { ConfigService } from './config.service';
     providers: [
         {
             provide: ConfigService,
-            useValue: new ConfigService(path.join(__dirname, `../../../../env/${process.env.NODE_ENV || 'development'}.env`))
+            useValue: new ConfigService(
+                path.join(__dirname, `../../../../env/${process.env.NODE_ENV || 'development'}.env`)
+            )
         }
     ],
     exports: [ConfigService]
