@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.9.3",
     "@nuxtjs/dotenv": "^1.4.1",
-    "nuxt": "^2.11.0",
+    "nuxt": "^2.15.8",
     "nuxt-property-decorator": "^2.5.0"
   },
   "devDependencies": {
